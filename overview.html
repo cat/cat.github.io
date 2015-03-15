@@ -39,7 +39,41 @@
       </div>
       <div class="row content">
         <div class="col-lg-8 col-lg-offset-2">
-          <p>The purpose of cat is twofold: on the one hand it provides utilities and functions not available in the standard C++ library with respect to the functional programming, on the other hand it provides a framework of type classes used in the Haskell language.</p>
+          <h3 id="the-purpose-of-cat-is-twofold">The purpose of cat is twofold:</h3>
+<ul>
+<li>on the one hand it provides utilities and functions not available in the standard C++ library with respect to the functional programming.</li>
+<li>on the other hand it provides a framework of type classes used in the Haskell language.</li>
+</ul>
+<h3 id="the-cat-library">The cat library:</h3>
+<ul>
+<li>is lightweight (headers only) where every function and object take advantage of modern C++ features, such as <code>constexpr</code>, moveability, perfect forwarding, virtual function desugaring (<code>final</code>), and static polymorphism.</li>
+<li>is written in pure and portable C++14, without using the macro black-magic and with a limited use of template meta-programming, confined only in the implementation of type traits.</li>
+<li>provides a set of type-traits that extend the standard ones, with respect to functional programming (e.g. <code>is_container</code>, <code>is_associative_container</code>, <code>function_type</code>, <code>arity</code>, <code>is_callable</code> to mention a few).</li>
+<li>provides functional utilities, like callable wrappers which enable currying on virtually any kind of callable objects (including <code>std::bind</code> expressions and generic lambdas).</li>
+<li>provides utilities that operate on <code>std::tuple</code> and generic containers. In particular the implementation of <code>forward_as</code> and <code>forward_iterator</code> enable perfect forwarding in for-loop statements and with the iterator paradigm.</li>
+<li>provides the machinary to build type classes, an extensible framework based on static polymorphism.</li>
+<li>provides instances of standard C++ types and containers for the following type-classes:
+<ul>
+<li>Functor</li>
+<li>Bifunctor</li>
+<li>Applicative</li>
+<li>Alternative</li>
+<li>Monoid</li>
+<li>Monad</li>
+<li>MonadPlus</li>
+<li>Foldable</li>
+<li>Show</li>
+<li>Read</li>
+</ul></li>
+<li>is tested with the following compilers:
+<ul>
+<li>gcc-4.9</li>
+<li>gcc-5</li>
+<li>clang-3.5</li>
+<li>clang 3.6</li>
+<li>both glibcxx and libc++ libraries.</li>
+</ul></li>
+</ul>
         </div>
       </div>
       <div class="row footer">
