@@ -48,3 +48,11 @@ static polymorphism.
     * clang 3.6 
     * both glibcxx and libc++ libraries.
 
+
+### Acknowledgements
+
+* The [Haskell](https://www.haskell.org) language
+* [Fit library](https://github.com/pfultz2/Fit) by Paul Fultz II
+* [FTL library](https://github.com/beark/ftl) by Bjorn Aili
+
+
