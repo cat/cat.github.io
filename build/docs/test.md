@@ -2,8 +2,10 @@
 title: test
 date: February 12, 2015 
 tags: functional.hpp
-description: Documentation is under construction
 ---
+
+## test
+**functional.hpp**
 
 ### Description
 
