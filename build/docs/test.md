@@ -13,8 +13,8 @@ The documentation is under construction.
 
 ### Synopsis 
 
-``` C++
-auto fun = fun();
+``` cpp
+auto x = fun(42);
 ```
 
 ### Parameters
