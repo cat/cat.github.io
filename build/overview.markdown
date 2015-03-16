@@ -5,33 +5,32 @@ title: Overview
 ### Rationale 
 
 
-The purpose of the cat library is twofold: 
+The purpose of the Cat library is twofold: 
 
-* on the one hand it provides utilities and functions 
-not available in the standard C++ library with respect to the functional programming. 
-* on the other hand it provides a framework for building type classes, an abstraction
-used in the Haskell language.
+* on the one hand it provides utilities and functions not available in the standard 
+C++ library with respect to the functional programming. 
+* on the other hand it implements an extensible framework of type classes to attain 
+a better reusability of code through functional principles.
 
 
 ### Features
 
-The cat library:
+The Cat library:
 
-* is lightweight (headers only). Each function and object shipped with the library
+* is lightweight. Each function and object shipped with the library
 takes advantage of modern C++ features, such as `constexpr` constructors and call 
 operators, movability, perfect forwarding, etc.
-* is written in pure and portable C++14, without using any macro black-magic and with
-a limited use of template meta-programming, confined only in the implementation
-of type traits.
-* provides a set of type traits that extends the standard ones (e.g. `is_container`, 
-`is_associative_container`, `function_type`, `function_arity`, `return_type`, `is_callable` 
-to mention a few).
-* provides functional utilities, like callable wrappers, which enable functional
-composition and currying on-top-of any kind of callable objects (including `std::bind` 
-expressions and generic lambdas).
-* provides utilities that operate on `std::tuple` and generic containers. 
-In particular `forward_as` and `forward_iterator` enable perfect forwarding in 
-for-loop statements and with the use of iterators.  
+* is written in portable C++14, without using macro black-magic and with a pinch 
+of template meta-programming, limited only in the implementation of type traits.
+* extends the standard type traits with a set specifically tailored to generic and 
+functional programming (e.g. `is_container`, `is_associative_container`, `function_type`, 
+`function_arity`, `return_type`, `is_callable` to mention a few).
+* provides utilities, like callable wrappers, enabling functional composition and 
+currying on-top-of any kind of callable types (including `std::bind` expressions 
+and generic lambdas).
+* provides functions that operate on `std::tuple` and generic containers. 
+In particular `forward_as` and `forward_iterator` allow for perfect forwarding of
+elements in for-loop statements and when iterating over containers.  
 * includes an extensible framework for building type classes and provides the
 implementation of the following ones:
     * Functor
@@ -45,7 +44,7 @@ implementation of the following ones:
     * Show
     * Read
 
-* provides instances of standard C++ types and containers for the above-mentioned type classes.
+* provides instances of standard C++ types for the above-mentioned type classes.
 
 ### Notes
 
@@ -59,6 +58,8 @@ library and with the following compilers:
 
 
 ### Acknowledgements
+
+The Cat library takes inspiration from the following projects:
 
 * The [Haskell](https://www.haskell.org) language
 * [Fit library](https://github.com/pfultz2/Fit) by Paul Fultz II
