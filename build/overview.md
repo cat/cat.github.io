@@ -10,7 +10,7 @@ The purpose of the Cat library is twofold:
 * on the one hand it provides utilities and functions not available in the standard 
 C++ library with respect to the functional programming. 
 * on the other hand it implements an extensible framework of type classes to attain 
-a better reusability of code through functional principles.
+a better reusability of code through the principles of category theory.
 
 
 ### Features
@@ -18,8 +18,8 @@ a better reusability of code through functional principles.
 The Cat library:
 
 * is lightweight. Each function and object shipped with the library
-takes advantage of modern C++ features, such as `constexpr` constructors and call 
-operators, movability, perfect forwarding, etc.
+takes advantage of modern C++ features, such as `constexpr` constructs, movability, 
+perfect forwarding, etc.
 * is written in portable C++14, without using macro black-magic and with a pinch 
 of template meta-programming, limited only in the implementation of type traits.
 * extends the standard type traits with a set specifically tailored to generic and 
@@ -43,6 +43,7 @@ implementation of the following ones:
     * Foldable
     * Show
     * Read
+    * ...
 
 * provides instances of standard C++ types for the above-mentioned type classes.
 
