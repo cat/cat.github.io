@@ -8,7 +8,7 @@ title: Overview
 The purpose of the Cat library is twofold: 
 
 * on the one hand it provides utilities and functions not available in the standard 
-C++ library with respect to the functional programming. 
+C++ library with respect to functional programming. 
 * on the other hand it implements an extensible framework of type classes to attain 
 a better reusability of code through the principles of category theory.
 
@@ -29,8 +29,8 @@ functional programming (e.g. `is_container`, `is_associative_container`, `functi
 currying on-top-of any kind of callable types (including `std::bind` expressions 
 and generic lambdas).
 * provides functions that operate on `std::tuple` and generic containers. 
-In particular `forward_as` and `forward_iterator` allow for perfect forwarding of
-elements in for-loop statements and when iterating over containers.  
+* provides `forward_as` and `forward_iterator` that allow for perfect forwarding from
+containers in for-loop statements and via iterator.  
 * includes an extensible framework for building type classes and provides the
 implementation of the following ones:
     * Functor

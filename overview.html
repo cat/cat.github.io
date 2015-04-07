@@ -36,7 +36,7 @@
                     <h3 id="rationale">Rationale</h3>
 <p>The purpose of the Cat library is twofold:</p>
 <ul>
-<li>on the one hand it provides utilities and functions not available in the standard C++ library with respect to the functional programming.</li>
+<li>on the one hand it provides utilities and functions not available in the standard C++ library with respect to functional programming.</li>
 <li>on the other hand it implements an extensible framework of type classes to attain a better reusability of code through the principles of category theory.</li>
 </ul>
 <h3 id="features">Features</h3>
@@ -46,7 +46,8 @@
 <li>is written in portable C++14, without using macro black-magic and with a pinch of template meta-programming, limited only in the implementation of type traits.</li>
 <li>extends the standard type traits with a set specifically tailored to generic and functional programming (e.g. <code>is_container</code>, <code>is_associative_container</code>, <code>function_type</code>, <code>function_arity</code>, <code>return_type</code>, <code>is_callable</code> to mention a few).</li>
 <li>provides utilities, like callable wrappers, enabling functional composition and currying on-top-of any kind of callable types (including <code>std::bind</code> expressions and generic lambdas).</li>
-<li>provides functions that operate on <code>std::tuple</code> and generic containers. In particular <code>forward_as</code> and <code>forward_iterator</code> allow for perfect forwarding of elements in for-loop statements and when iterating over containers.<br /></li>
+<li>provides functions that operate on <code>std::tuple</code> and generic containers.</li>
+<li>provides <code>forward_as</code> and <code>forward_iterator</code> that allow for perfect forwarding from containers in for-loop statements and via iterator.<br /></li>
 <li>includes an extensible framework for building type classes and provides the implementation of the following ones:
 <ul>
 <li>Functor</li>
