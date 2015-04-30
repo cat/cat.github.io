@@ -30,7 +30,7 @@ main = hakyll $ do
     match "overview.md" $ do
         route   $ setExtension "html"
         compile $ pandocCompiler'
-            >>= loadAndApplyTemplate "_templates/default.html" defaultContext
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     --building docs and doc-related pages
@@ -40,9 +40,9 @@ main = hakyll $ do
     match "docs/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler'
-            >>= loadAndApplyTemplate "_templates/doc.html" (taggedDocCtx tags)
+            >>= loadAndApplyTemplate "templates/doc.html" (taggedDocCtx tags)
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "_templates/default.html" defaultContext
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     create ["documentation.html"] $ do
@@ -54,8 +54,8 @@ main = hakyll $ do
                     defaultContext
 
             makeItem ""
-                >>= loadAndApplyTemplate "_templates/docs.html" archiveCtx
-                >>= loadAndApplyTemplate "_templates/default.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/docs.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
 
     --building tag pages and tag cloud
@@ -66,8 +66,8 @@ main = hakyll $ do
         compile $ do
             docsTagged tags pattern recentFirst
                 >>= makeItem
-                >>= loadAndApplyTemplate "_templates/tag.html" tagCtx
-                >>= loadAndApplyTemplate "_templates/default.html" tagCtx
+                >>= loadAndApplyTemplate "templates/tag.html" tagCtx
+                >>= loadAndApplyTemplate "templates/default.html" tagCtx
                 >>= relativizeUrls
 
     create ["tags.html"] $ do
@@ -77,8 +77,8 @@ main = hakyll $ do
 
             renderTagCloud 100 300 tags
                 >>= makeItem
-                >>= loadAndApplyTemplate "_templates/cloud.html" cloudCtx
-                >>= loadAndApplyTemplate "_templates/default.html" cloudCtx
+                >>= loadAndApplyTemplate "templates/cloud.html" cloudCtx
+                >>= loadAndApplyTemplate "templates/default.html" cloudCtx
                 >>= relativizeUrls
 
     --building the front page
@@ -90,12 +90,12 @@ main = hakyll $ do
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "_templates/default.html" homeCtx
+                >>= loadAndApplyTemplate "templates/default.html" homeCtx
                 >>= relativizeUrls
 
 
     --loading the templated
-    match "_templates/*" $ compile templateCompiler
+    match "templates/*" $ compile templateCompiler
 
 
 extensions :: Set.Set Extension
@@ -125,14 +125,14 @@ pandocMathWriterOptions  = defaultHakyllWriterOptions {
 docList :: ([Item String] -> Compiler [Item String]) -> Compiler String
 docList sortFilter = do
     docs   <- sortFilter =<< loadAll "docs/*"
-    itemTpl <- loadBody "_templates/doc-item.html"
+    itemTpl <- loadBody "templates/doc-item.html"
     list    <- applyTemplateList itemTpl defaultContext docs
     return list
 
 
 docsTagged :: Tags -> Pattern -> ([Item String] -> Compiler [Item String]) -> Compiler String
 docsTagged tags pattern sortFilter = do
-    template <- loadBody "_templates/doc-item.html"
+    template <- loadBody "templates/doc-item.html"
     docs <- sortFilter =<< loadAll pattern
     applyTemplateList template defaultContext docs
 
