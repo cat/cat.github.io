@@ -5,7 +5,7 @@ title: Overview
 ### Rationale 
 
 
-The purpose of the Cat library is twofold: 
+The purpose of Cat library is twofold: 
 
 * to provide utility classes and functions that enable the functional programming paradigm in C++. 
 * to implement an extensible framework of type classes to attain a better reusability of code 
@@ -20,16 +20,15 @@ The Cat library:
 takes advantage of modern C++ features, such as `constexpr` constructs, movability, 
 perfect forwarding, etc.
 * is written in portable C++14 without macro black-magic, whereas 
-template meta-programming is limited only in the implementation of type traits.
-* extends the standard type traits with a set specifically tailored to generic and 
-functional programming (e.g. `is_container`, `is_associative_container`, `function_type`, 
-`function_arity`, `return_type`, `is_callable` to mention a few).
+template meta-programming is restricted only to the implementation of type traits.
+* implements type traits tailored for generic and functional programming (e.g. `is_container`, 
+`is_associative_container`, `function_type`, `function_arity`, `return_type`, `is_callable` to mention a few).
 * provides utilities, like callable wrappers, which enable functional composition and 
 currying on-top-of any kind of callable types (including `std::bind` expressions 
 and generic lambdas).
 * provides functions that operate on `std::tuple` and generic containers. 
-* provides utilities that allow for perfect forwarding from L/R value containers 
-by means of `forward_as` or by means of the iterator adaptor `forward_iterator`.  
+* provides utilities that enable perfect forwarding from L/R value containers 
+by means of `forward_as` and `forward_iterator`.  
 * includes an extensible framework for building type classes and provides the
 implementation of the following ones:
     * Functor
@@ -44,7 +43,7 @@ implementation of the following ones:
     * Read
     * ...
 
-* provides instances of standard C++14 and Technical Specification (TS) types for the above-mentioned type classes.
+* includes instances of standard C++14 and Technical Specification (TS) containers/types for the above-mentioned type classes.
 
 ### Notes
 
